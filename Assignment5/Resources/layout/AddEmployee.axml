@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView1">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/jzPhoto"
+            android:hint="Photo URL..." />
+    </ScrollView>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/jzFirstName"
+        android:hint="First Name..." />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/jzLastName"
+        android:hint="Last Name..." />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/jzTitle"
+        android:hint="Job Title..." />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/jzOfficePhone"
+        android:hint="Office Phone..."
+        android:inputType="phone" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/jzMobilePhone"
+        android:hint="Mobile Phone..."
+        android:inputType="phone" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/jzEmail"
+        android:hint="Email Address..."
+        android:inputType="textEmailAddress" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/jzManager"
+        android:hint="Manager..." />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/jzManagerEmail"
+        android:hint="Manager's Email..." />
+    <Button
+        android:text="Add Employee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/jzAdd" />
+</LinearLayout>
