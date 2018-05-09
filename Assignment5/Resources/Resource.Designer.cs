@@ -44,11 +44,11 @@ namespace Assignment5
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f040013
-			public const int btnEmployee = 2130968595;
+			// aapt resource value: 0x7f040010
+			public const int btnEmployee = 2130968592;
 			
-			// aapt resource value: 0x7f040012
-			public const int btnLogin = 2130968594;
+			// aapt resource value: 0x7f04000f
+			public const int btnLogin = 2130968591;
 			
 			// aapt resource value: 0x7f04000a
 			public const int jzAdd = 2130968586;
@@ -90,19 +90,10 @@ namespace Assignment5
 			public const int searchView1 = 2130968587;
 			
 			// aapt resource value: 0x7f04000e
-			public const int txtFirst = 2130968590;
-			
-			// aapt resource value: 0x7f04000f
-			public const int txtLast = 2130968591;
-			
-			// aapt resource value: 0x7f040011
-			public const int txtPassword = 2130968593;
+			public const int txtPassword = 2130968590;
 			
 			// aapt resource value: 0x7f04000d
-			public const int txtTitle = 2130968589;
-			
-			// aapt resource value: 0x7f040010
-			public const int txtUsername = 2130968592;
+			public const int txtUsername = 2130968589;
 			
 			static Id()
 			{
@@ -127,10 +118,7 @@ namespace Assignment5
 			public const int Home = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int listview_row = 2130837507;
-			
-			// aapt resource value: 0x7f020004
-			public const int Main = 2130837508;
+			public const int Main = 2130837507;
 			
 			static Layout()
 			{

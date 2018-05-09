@@ -18,7 +18,6 @@ namespace Assignment5
         {
             base.OnCreate(savedInstanceState);
 
-            // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
             txtUsername = FindViewById<EditText>(Resource.Id.txtUsername);
@@ -40,7 +39,7 @@ namespace Assignment5
             if (txtUsername.Text.ToLower() == "employeeadmin" && txtPassword.Text == "318@ppUser")
             {
                 StartActivity(typeof(HomeActivity));
-                Toast.MakeText(this, "Success", ToastLength.Long).Show();
+                Toast.MakeText(this, "Login Successful", ToastLength.Long).Show();
             }
             else
             {

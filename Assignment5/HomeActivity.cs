@@ -20,7 +20,8 @@ namespace Assignment5
         Button jzAdd;
         ListView jzEmployee;
 
-        string filePath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments), "BookList.db3");
+        string filePath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments), "EmployeeList.db3");
+
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -56,13 +57,14 @@ namespace Assignment5
             var db = new SQLiteConnection(filePath);
             var employeeList = db.Table<Employee>();
 
-            List<string> employeeName = new List<string>();
+            List<string> employeeInfo = new List<string>();
 
             foreach (var employee in employeeList)
             {
-                employeeName.Add(employee.firstName);
+                employeeInfo.Add(employee.firstName);
             }
-            jzEmployee.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, employeeName.ToArray());
+
+            jzEmployee.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, employeeInfo.ToArray());
         }
     }
 

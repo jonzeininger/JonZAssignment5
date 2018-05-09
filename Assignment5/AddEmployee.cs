@@ -28,7 +28,7 @@ namespace Assignment5
         EditText jzManagerEmail;
         Button jzAdd;
 
-        string filePath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments), "BookList.db3");
+        public string filePath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments), "EmployeeList.db3");
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -41,9 +41,10 @@ namespace Assignment5
             }
             catch (IOException ex)
             {
-                var reason = string.Format("Failed to create Table - reason {0}", ex.Message);
+                var reason = string.Format("Failed to create table - reason {0}", ex.Message);
                 Toast.MakeText(this, reason, ToastLength.Long).Show();
             }
+
 
             SetContentView(Resource.Layout.AddEmployee);
 
@@ -63,29 +64,60 @@ namespace Assignment5
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
+
+            if(jzFirstName.Text.Length < 2)
+            {
+                Toast.MakeText(this, "First name must be at least 2 characters", ToastLength.Long).Show();
+                return;
+            }
+            if (jzLastName.Text.Length < 2)
+            {
+                Toast.MakeText(this, "Last name must be at least 2 characters", ToastLength.Long).Show();
+                return;
+            }
+            if (jzTitle.Text.Length < 2)
+            {
+                Toast.MakeText(this, "Title must be at least 2 characters", ToastLength.Long).Show();
+                return;
+            }
             string alertTitle, alertMessage;
             if (!string.IsNullOrEmpty(jzFirstName.Text))
             {
-                var newEmployee = new Employee { firstName = jzFirstName.Text, lastName = jzLastName.Text, jobTitle = jzTitle.Text,
-                    officePhone = jzOfficePhone.Text, mobilePhone = jzMobilePhone.Text, emailAddress = jzEmail.Text, manager = jzManager.Text, managerEmail = jzManagerEmail.Text };
+                var newEmployee = new Employee
+                {
+                    firstName = jzFirstName.Text,
+                    lastName = jzLastName.Text,
+                    jobTitle = jzTitle.Text,
+                    officePhone = jzOfficePhone.Text,
+                    mobilePhone = jzMobilePhone.Text,
+                    emailAddress = jzEmail.Text,
+                    manager = jzManager.Text,
+                    managerEmail = jzManagerEmail.Text
+                };
+
                 var db = new SQLiteConnection(filePath);
                 db.Insert(newEmployee);
 
                 alertTitle = "Success";
-                alertMessage = "Employee added successfully";
+                alertMessage = string.Format("Employee added!");
+
             }
             else
             {
-                alertTitle = "Failed to add Employee";
-                alertMessage = "Enter valid Employee Info";
+                alertTitle = "Failed";
+                alertMessage = "Enter valid employee info";
             }
 
             AlertDialog.Builder alert = new AlertDialog.Builder(this);
             alert.SetTitle(alertTitle);
             alert.SetMessage(alertMessage);
-            alert.SetPositiveButton("Ok", (senderAlert, args) =>
+            alert.SetPositiveButton("OK", (senderAlert, args) =>
             {
                 Toast.MakeText(this, "Continue!", ToastLength.Short).Show();
+            });
+            alert.SetNegativeButton("Cancel", (senderAlert, args) =>
+            {
+                Toast.MakeText(this, "Cancelled!", ToastLength.Short).Show();
             });
             Dialog dialog = alert.Create();
             dialog.Show();
