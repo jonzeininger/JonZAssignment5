@@ -21,7 +21,8 @@ namespace Assignment5
         ListView jzEmployee;
 
         string filePath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments), "EmployeeList.db3");
-
+        // Code used for SQLite is from Lab 17. Can't find a way to get the code to display in the listview. 
+        // Know data is being added to the DB, getting constraint error for entering duplicate info. 
 
         protected override void OnCreate(Bundle savedInstanceState)
         {

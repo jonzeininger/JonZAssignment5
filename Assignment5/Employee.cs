@@ -16,6 +16,10 @@ namespace Assignment5
     class Employee
     {
         [PrimaryKey]
+        // [PrimaryKey, AutoIncrement]
+        // public int EmployeeId { get; set; }
+        // Added EmployeeId after the first time I created the "Employee" table, get a SQLite exception if the code is added 
+        // Would have to delete the table and recreate to add it as the primary key with auto increments.
         public string firstName { get; set; }
         public string lastName { get; set; }
         public string jobTitle { get; set; }
